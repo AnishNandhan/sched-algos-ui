@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./style.css" rel="stylesheet">
+    <script src="./app.js" defer></script>
+    <script src="./proc.js" defer></script>
+    <script src="./mlfq.js" defer></script>
+    <title>Scheduling Demo</title>
+</head>
+<body>
+    <div class="input-box">
+        <h1>Processes</h1>
+        <form id="p-form" action="">
+            <div class="inp-fields">
+                <input class="pid" type="text">
+                <input class="at" type="text">
+                <input class="bt" type="text">
+            </div>            
+        </form>
+        <div class="btn-box">
+            <button id="add-process">Add Process</button>
+            <button id="del-process">Delete Process</button>
+            <button id="submit">Submit</button>
+        </div>
+    </div>
+    <div id="output-box"></div>
+</body>
+</html>
