@@ -1,10 +1,47 @@
-const f = document.getElementById("p-form")
-const node = f.children[0]
+let f
+let node
+
+const m = document.getElementById("p-form-mlfq")
+const p = document.getElementById("p-form-priority")
+const r = document.getElementById("p-form-rr")
+
+f = m
+
 const outp = document.getElementById("output-box")
+const sel = document.getElementById("sched-alg")
+let opt = sel.value
 
 const addbtn = document.getElementById("add-process")
 const delbtn = document.getElementById("del-process")
 const submit = document.getElementById("submit")
+
+sel.onchange = (e) => {
+    opt = sel.value
+
+    switch (opt) {
+        case 'mlfq':
+            f = m
+            m.style.display = "block"
+            p.style.display = "none"
+            r.style.display = "none"
+            break;
+        case 'priority':
+            f = p
+            m.style.display = "none"
+            p.style.display = "block"
+            r.style.display = "none"
+            break;
+        case 'rr':
+            f = r
+            m.style.display = "none"
+            p.style.display = "none"
+            r.style.display = "block"
+            break;    
+        default:
+            break;
+    }
+    node = f.children[0]
+}
 
 
 addbtn.addEventListener("click", () => {
@@ -35,18 +72,17 @@ submit.addEventListener("click", () => {
                 process.children[0].value,
                 parseInt(process.children[1].value),
                 parseInt(process.children[2].value),
+                process.children[3] ? parseInt(process.children[3].value) : null
             ))
         }
     });
 
-    let opt = document.getElementById("sched-alg").value
-
     switch (opt) {
         case 'mlfq':
-            console.log(opt)
             sched(processes)
             break
         case 'priority':
+            console.log(processes)
             console.log(opt)
             break
         case 'rr':

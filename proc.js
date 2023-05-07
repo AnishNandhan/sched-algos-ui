@@ -3,9 +3,11 @@ class Proc{
     TAT
     CT
     WT
-    constructor(id, at, bt) {
+    PR
+    constructor(id, at, bt, pr = null) {
         this.id = id
         this.AT = at
         this.BT = bt
+        this.PR = pr
     }
 }

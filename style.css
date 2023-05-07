@@ -11,3 +11,11 @@
     justify-content: center;
     align-items: center;
 }
+
+#p-form-priority {
+    display: none;
+}
+
+#p-form-rr {
+    display: none;
+}
