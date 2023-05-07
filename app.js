@@ -38,7 +38,25 @@ submit.addEventListener("click", () => {
             ))
         }
     });
-    sched(processes)
+
+    let opt = document.getElementById("sched-alg").value
+
+    switch (opt) {
+        case 'mlfq':
+            console.log(opt)
+            sched(processes)
+            break
+        case 'priority':
+            console.log(opt)
+            break
+        case 'rr':
+            console.log(opt) 
+            break
+        default:
+            console.log("burgir")
+    }
+
+    
 })
 
 function addText(text, clas = "") {

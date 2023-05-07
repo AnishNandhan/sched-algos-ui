@@ -41,7 +41,7 @@ function sched(arr) {
             Q1[i].RT = 0
             Q1[i].WT = time - Q1[i].AT - Q1[i].BT
             Q1[i].TAT = time - Q1[i].AT
-            addText(Q1[i].id + "&emsp;&emsp;&emsp;&emsp;&emsp;" + Q1[i].BT + "&emsp;&emsp;&emsp;" + Q1[i].WT + "&emsp;&emsp;&emsp;" + Q1[i].TAT, "num")
+            addText(Q1[i].id + "&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;" + Q1[i].BT + "&emsp;&emsp;&emsp;" + Q1[i].WT + "&emsp;&emsp;&emsp;" + Q1[i].TAT, "num")
         }
         else {
             // Q2[k].WT = time
@@ -67,7 +67,7 @@ function sched(arr) {
             Q2[i].RT = 0
             Q2[i].WT = time - tq1- Q2[i].BT
             Q2[i].TAT = time - Q2[i].AT
-            addText(Q2[i].id + "&emsp;&emsp;&emsp;&emsp;&emsp;" + Q2[i].BT + "&emsp;&emsp;&emsp;" + Q2[i].WT + "&emsp;&emsp;&emsp;" + Q2[i].TAT, "num")
+            addText(Q2[i].id + "&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;" + Q2[i].BT + "&emsp;&emsp;&emsp;" + Q2[i].WT + "&emsp;&emsp;&emsp;" + Q2[i].TAT, "num")
         }
         else {
             // Q3[r].AT=time
@@ -99,6 +99,6 @@ function sched(arr) {
     for(i = 0; i < r; i++) {
         Q3[i].TAT = Q3[i].CT
         Q3[i].WT = Q3[i].TAT - Q3[i].BT
-        addText(Q3[i].id + "&emsp;&emsp;&emsp;&emsp;&emsp;" + Q3[i].BT + "&emsp;&emsp;&emsp;" + Q3[i].WT + "&emsp;&emsp;&emsp;" + Q3[i].TAT, "num")
+        addText(Q3[i].id + "&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;" + Q3[i].BT + "&emsp;&emsp;&emsp;" + Q3[i].WT + "&emsp;&emsp;&emsp;" + Q3[i].TAT, "num")
     }
 }
