@@ -58,15 +58,36 @@ addbtn.addEventListener("click", () => {
     if(clone.children[3]) {
         clone.children[3].value = ""
     }
-    f.appendChild(clone)
+
+    if(opt == "rr") {
+        const l = document.getElementById("tq-label")
+        f.insertBefore(clone, l)
+    }
+    else {
+        f.appendChild(clone)
+    }
 })
 
 delbtn.addEventListener("click", () => {
-    if(f.childElementCount == 2) {
-        console.log("Only one process present")
-        return
+    if(opt == "rr") {
+        let n = f.children.length
+        let l = f.children[n - 3]
+
+        if(f.childElementCount == 4) {
+            console.log("Only one process present")
+            return
+        }
+
+        l.remove()
     }
-    f.removeChild(f.lastChild)
+    else {
+        if(f.childElementCount == 2) {
+            console.log("Only one process present")
+            return
+        }
+        f.removeChild(f.lastChild)
+    }
+    
 })
 
 submit.addEventListener("click", () => {
@@ -76,7 +97,7 @@ submit.addEventListener("click", () => {
 
     let processes = []
     Array.from(f.children).forEach(process => {
-        if(process.children[0].value && process.children[1].value && process.children[2].value) {
+        if(process.className == "inp-fields" && process.children[0].value && process.children[1].value && process.children[2].value) {
             processes.push(new Proc(
                 process.children[0].value,
                 parseInt(process.children[1].value),
@@ -95,7 +116,8 @@ submit.addEventListener("click", () => {
             console.log(opt)
             break
         case 'rr':
-            roundRobinScheduling(processes, 5)
+            let t = document.getElementById("tq").value
+            roundRobinScheduling(processes, t)
             console.log(opt) 
             break
         default:

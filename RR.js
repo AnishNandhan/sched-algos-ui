@@ -11,6 +11,7 @@
 // }
 
 function roundRobinScheduling(processes, quantum) {
+  console.log(processes)
   const n = processes.length;
   let currentTime = 0;
   let completedProcesses = 0;
@@ -47,10 +48,10 @@ function roundRobinScheduling(processes, quantum) {
   const avgWT = totalWT / n;
   const avgTAT = totalTAT / n;
 
-  addText("PID\tAT\tBT\tCT\tWT\tTAT");
+  addText("PID&emsp;AT&emsp;BT&emsp;CT&emsp;WT&emsp;TAT", "sub-head");
   processes.forEach(process => {
     addText(
-      `${process.id}\t${process.AT}\t${process.BT}\t${process.CT}\t${process.WT}\t${process.TAT}`
+      `${process.id}&emsp;&emsp;&nbsp;${process.AT}&emsp;&ensp;${process.BT}&emsp;&ensp;${process.CT}&emsp;&nbsp;${process.WT}&emsp;&ensp;${process.TAT}`
     );
   });
 
