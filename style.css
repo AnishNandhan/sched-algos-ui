@@ -1,3 +1,8 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
 .input-box {
     width: 100%;
     display: flex;
@@ -6,10 +11,42 @@
     justify-content: center;
 }
 
+.btn-box {
+    display: flex;
+    justify-content: space-around;
+    width: 20%;
+    margin: 2em;
+}
+
+#output-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5em;
+    margin-bottom: 5em;
+}
+
+#output-box p {
+    font-size: large;
+}
+
+.cont {
+    display: flex;
+    justify-content: space-around;
+}
+
 .header {
     display: flex;
     justify-content: center;
     align-items: center;
+    width:50%;
+    margin: 2em;
+    margin-bottom: 4em;
+}
+
+.header select {
+    margin-left: 2em;
 }
 
 #p-form-priority {
@@ -18,4 +55,54 @@
 
 #p-form-rr {
     display: none;
+}
+
+.inp-fields input {
+    margin: 0.5em
+}
+
+.btn-box button {
+    color: white;
+    padding: 0.5em;
+    border-radius: 10px 10px 10px 10px;
+    border: none;
+}
+
+.btn-box button:hover {
+    cursor: pointer;
+}
+
+#add-process {
+    background-color: rgb(32, 175, 32);
+    
+}
+
+#add-process:hover {
+    background-color: rgb(26, 228, 26);
+}
+
+#del-process {
+    background-color: red;
+}
+
+#del-process:hover {
+    background-color: rgb(255, 99, 99);
+}
+
+#submit {
+    background-color: gray;
+}
+
+#submit:hover {
+    background-color: rgb(160, 160, 160);
+}
+
+input {
+    height: 2em;
+    padding-left: 1em;
+    font-size: medium;
+}
+
+.sub-head {
+    font-weight: bold;
 }

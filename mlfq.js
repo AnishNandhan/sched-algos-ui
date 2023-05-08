@@ -19,6 +19,7 @@ function sortByArrival() {
 
 function sched(arr) {
     let i, j, k = 0, r = 0, time = 0, tq1 = 5, tq2 = 8, flag = 0, c
+    let totalTAT = 0, totalWT = 0
 
     Q1 = arr
     n = arr.length
@@ -31,7 +32,6 @@ function sched(arr) {
 
     time = Q1[0].AT
     
-    console.log(Q1)
     addText("Process in first queue following RR with qt=5", "sub-head")
     addText("Process&emsp;&emsp;RT&emsp;&emsp;WT&emsp;&emsp;TAT&emsp;&emsp;", "sub-head")
 
@@ -41,6 +41,8 @@ function sched(arr) {
             Q1[i].RT = 0
             Q1[i].WT = time - Q1[i].AT - Q1[i].BT
             Q1[i].TAT = time - Q1[i].AT
+            totalTAT += Q1[i].TAT
+            totalWT += Q1[i].WT
             addText(Q1[i].id + "&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;" + Q1[i].BT + "&emsp;&emsp;&emsp;" + Q1[i].WT + "&emsp;&emsp;&emsp;" + Q1[i].TAT, "num")
         }
         else {
@@ -51,6 +53,7 @@ function sched(arr) {
             // Q2[k].id = Q1[i].id
             Q2.push(new Proc(Q1[i].id, time, Q1[i].RT))
             Q2[k].RT = Q2[k].BT
+            // Q2[k].TAT += time - Q2[k].AT
             k += 1
             flag = 1
         }
@@ -67,6 +70,8 @@ function sched(arr) {
             Q2[i].RT = 0
             Q2[i].WT = time - tq1- Q2[i].BT
             Q2[i].TAT = time - Q2[i].AT
+            totalTAT += Q2[i].TAT
+            totalWT += Q2[i].WT
             addText(Q2[i].id + "&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;" + Q2[i].BT + "&emsp;&emsp;&emsp;" + Q2[i].WT + "&emsp;&emsp;&emsp;" + Q2[i].TAT, "num")
         }
         else {
@@ -77,6 +82,7 @@ function sched(arr) {
             // Q3[r].id=Q2[i].id
             Q3.push(new Proc(Q2[i].id, time, Q2[i].RT))
             Q3[r].RT=Q3[r].BT
+            // Q3[r].TAT += time - Q3[r].AT
             r=r+1
             flag=2
         }
@@ -99,6 +105,10 @@ function sched(arr) {
     for(i = 0; i < r; i++) {
         Q3[i].TAT = Q3[i].CT
         Q3[i].WT = Q3[i].TAT - Q3[i].BT
+        totalTAT += Q3[i].TAT
+        totalWT += Q3[i].WT
         addText(Q3[i].id + "&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;" + Q3[i].BT + "&emsp;&emsp;&emsp;" + Q3[i].WT + "&emsp;&emsp;&emsp;" + Q3[i].TAT, "num")
     }
+    addText("Average Waiting Time:   " + totalWT / n, "sub-head")
+    addText("Average Turnaroung Time:   " + totalTAT / n, "sub-head")
 }

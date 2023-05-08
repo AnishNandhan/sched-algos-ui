@@ -6,9 +6,11 @@ const p = document.getElementById("p-form-priority")
 const r = document.getElementById("p-form-rr")
 
 f = m
+node = f.children[1]
 
-const outp = document.getElementById("output-box")
+const outp = document.getElementById("para-container")
 const sel = document.getElementById("sched-alg")
+sel.selectedIndex = 0
 let opt = sel.value
 
 const addbtn = document.getElementById("add-process")
@@ -40,7 +42,11 @@ sel.onchange = (e) => {
         default:
             break;
     }
-    node = f.children[0]
+    node = f.children[1]
+
+    Array.from(outp.children).forEach(c => {
+        c.remove()
+    })
 }
 
 
@@ -49,11 +55,14 @@ addbtn.addEventListener("click", () => {
     clone.children[0].value = ""
     clone.children[1].value = ""
     clone.children[2].value = ""
+    if(clone.children[3]) {
+        clone.children[3].value = ""
+    }
     f.appendChild(clone)
 })
 
 delbtn.addEventListener("click", () => {
-    if(f.childElementCount == 1) {
+    if(f.childElementCount == 2) {
         console.log("Only one process present")
         return
     }
@@ -72,7 +81,7 @@ submit.addEventListener("click", () => {
                 process.children[0].value,
                 parseInt(process.children[1].value),
                 parseInt(process.children[2].value),
-                process.children[3] ? parseInt(process.children[3].value) : null
+                process.children[3] ? parseInt(process.children[3].value) : 1
             ))
         }
     });
@@ -82,10 +91,11 @@ submit.addEventListener("click", () => {
             sched(processes)
             break
         case 'priority':
-            console.log(processes)
+            pq(processes)
             console.log(opt)
             break
         case 'rr':
+            roundRobinScheduling(processes, 5)
             console.log(opt) 
             break
         default:
