@@ -39,8 +39,8 @@ function sched(arr) {
         if(Q1[i].RT <= tq1) {
             time += Q1[i].RT
             Q1[i].RT = 0
-            Q1[i].WT = time - Q1[i].AT - Q1[i].BT
             Q1[i].TAT = time - Q1[i].AT
+            Q1[i].WT = Q1[i].TAT - Q1[i].BT
             totalTAT += Q1[i].TAT
             totalWT += Q1[i].WT
             addText(Q1[i].id + "&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;" + Q1[i].BT + "&emsp;&emsp;&emsp;" + Q1[i].WT + "&emsp;&emsp;&emsp;" + Q1[i].TAT, "num")
@@ -110,5 +110,5 @@ function sched(arr) {
         addText(Q3[i].id + "&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;" + Q3[i].BT + "&emsp;&emsp;&emsp;" + Q3[i].WT + "&emsp;&emsp;&emsp;" + Q3[i].TAT, "num")
     }
     addText("Average Waiting Time:   " + totalWT / n, "sub-head")
-    addText("Average Turnaroung Time:   " + totalTAT / n, "sub-head")
+    addText("Average Turnaround Time:   " + totalTAT / n, "sub-head")
 }
