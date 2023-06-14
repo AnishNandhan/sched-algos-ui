@@ -106,3 +106,47 @@ input {
 .sub-head {
     font-weight: bold;
 }
+
+#ganttChart {
+    font-family: monospace;
+    white-space: pre;
+}
+
+.process-bar {
+display: inline-block;
+height: 30px;
+padding: 4px;
+margin-right: 4px;
+background-color: #5bc0de;
+color: #fff;
+}
+
+nav {
+    color: white;
+    background-color: black;
+}
+
+nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    padding: 1em;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: large;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    letter-spacing: 1px;
+    transition: ease-in 0.1s;
+}

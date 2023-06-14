@@ -1,3 +1,5 @@
+google.charts.load('current', {'packages': ['gantt']})
+
 let f
 let node
 
@@ -98,6 +100,10 @@ submit.addEventListener("click", () => {
     let processes = []
     Array.from(f.children).forEach(process => {
         if(process.className == "inp-fields" && process.children[0].value && process.children[1].value && process.children[2].value) {
+            if(parseInt(process.children[0].value) < 0) {
+                alert("Cannot accept negative value for process ID")
+                return
+            }
             processes.push(new Proc(
                 process.children[0].value,
                 parseInt(process.children[1].value),
