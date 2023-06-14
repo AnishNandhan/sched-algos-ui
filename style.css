@@ -127,10 +127,8 @@ nav {
 }
 
 nav ul {
-    width: 100%;
     display: flex;
-    justify-content: space-around;
-
+    justify-content: space-evenly;
     padding: 1em;
 }
 
@@ -149,4 +147,15 @@ nav a:hover {
     text-decoration: underline;
     letter-spacing: 1px;
     transition: ease-in 0.1s;
+}
+
+#sync-head {
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+}
+
+#sync-vid {
+    display: flex;
+    justify-content: center;
 }

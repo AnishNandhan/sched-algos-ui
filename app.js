@@ -1,4 +1,4 @@
-google.charts.load('current', {'packages': ['gantt']})
+// google.charts.load('current', {'packages': ['gantt']})
 
 let f
 let node
