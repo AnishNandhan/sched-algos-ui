@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FreeBSD - A Powerful and Flexible Operating System</title>
+  <link rel="stylesheet" type="text/css" href="style_norm.css">
+  <link href="./style.css" rel="stylesheet">
+  <style>
+
+    .container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+
+		.card {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			width: 1425px;
+			height: 150px;
+			margin: 10px;
+			background: #2a7ea5;
+			box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+			transition: transform 0.3s ease-in-out;
+		}
+
+		.card:hover {
+			transform: translateY(-10px);
+			box-shadow: 0 15px 20px rgba(0,0,0,0.3);
+		}
+
+		.card img {
+			max-width: 100%;
+			max-height: 100%;
+			object-fit: cover;
+			transition: transform 0.3s ease-in-out;
+		}
+
+		.card:hover img {
+			transform: scale(1.1);
+		}
+
+		.card h2 {
+			font-size: 1.2rem;
+			color: #333;
+			margin-top: 10px;
+			transition: color 0.3s ease-in-out;
+		}
+
+		.card:hover h2 {
+			color: rgb(210, 212, 214);
+		}
+
+		.card p {
+			font-size: 1rem;
+			color: rgb(210, 212, 214);
+			margin-top: 10px;
+			text-align: center;
+			transition: color 0.3s ease-in-out;
+		}
+
+		.card:hover p {
+			color: #000;
+		}
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      /* padding: 20px; */
+      line-height: 1.6;
+    }
+    
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      padding: 20px;
+    }
+    
+    p {
+      margin-bottom: 20px;
+      padding: 20px;
+    }
+    
+    .highlight {
+      color: #f00;
+      font-weight: bold;
+    }
+    
+    .features {
+      margin-top: 40px;
+      padding: 20px;
+    }
+    
+    .feature {
+      margin-bottom: 20px;
+    }
+    
+    .feature h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    
+    .feature p {
+      margin-bottom: 10px;
+    }
+    
+    .feature ul {
+      margin-top: 5px;
+      margin-bottom: 10px;
+    }
+    
+    .feature ul li {
+      list-style-type: disc;
+      margin-left: 20px;
+    }
+    
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+        <li><a href="./normal_page.html">FreeBSD</a></li>
+        <li><a href="./index.html">Scheduling</a></li>
+        <li><a href="./sync.html">Synchronisation</a></li>
+        <li><a href="./bankalgo.html">Banker's Algo</a></li>
+    </ul>
+  </nav>
+  <h1>FreeBSD - A Powerful and Flexible Operating System</h1>
+  
+  <p>FreeBSD is a free and open-source Unix-like operating system that is based on the Berkeley Software Distribution (BSD) UNIX operating system. It was first released in 1993 and has since become a popular choice for servers, embedded systems, and desktop computers.</p>
+  
+  <p>FreeBSD is known for its reliability, scalability, and security, as well as its comprehensive documentation and strong community support. It offers advanced features such as jails, which provide a lightweight virtualization solution, and ZFS, a next-generation file system with advanced features like data integrity and snapshotting.</p>
+  
+  <p>FreeBSD also has a well-regarded ports system, which allows users to easily install and update third-party software packages. It supports a wide range of hardware architectures and has been ported to a variety of platforms, including ARM, MIPS, PowerPC, and x86.</p>
+  
+  <div class="features">
+    <div class="feature">
+      <div class="card">
+      <h2>Advanced Networking</h2>
+      <p>FreeBSD has a powerful and flexible networking stack that includes support for advanced features such as TCP/IP offload, packet filtering, network address translation, and more.</p>
+      </div>
+    </div>
+    
+    <div class="feature">
+      <div class="card">
+      <h2>ZFS File System</h2>
+      <p>FreeBSD supports the ZFS file system, which provides advanced features such as data compression, snapshots, and copy-on-write.</p>
+    </div>
+    </div>
+    
+    <div class="feature">
+      <div class="card">
+      <h2>Jails</h2>
+      <p>FreeBSD has a built-in virtualization technology called jails, which allows administrators to create isolated environments that function like virtual machines but with much lower overhead.</p></div>
+    </div>
+    
+    <div class="feature">
+      <div class="card">
+      <h2>Ports Collection</h2>
+      <p>FreeBSD has a large collection of pre-built software packages that are easily installed using the ports collection. The ports collection includes thousands of applications, tools, and utilities.</p></div>
+    </div>
+    
+    <div class="feature">
+      <div class="card">
+      <h2>Security</h2>
+      <p>FreeBSD has a strong focus on security, with features such as file system encryption, secure levels, and a mandatory access control framework.</p></div>
+    </div>
+    
+    <div class="feature">
+      <div class="card">
+      <h2>Performance</h2>
+      <p>FreeBSD is known for its high performance, particularly in networking and server applications. It is often used in high-traffic, high-availability environments.</p></div>
+    </div>
+  </div>
+</body>
+</html>
